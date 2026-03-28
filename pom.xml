@@ -11,6 +11,16 @@
 
     <name>Jenkins Maven Demo</name>
 
+    <!-- ✅ ADD THIS -->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
