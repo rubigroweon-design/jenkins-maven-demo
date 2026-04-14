@@ -9,9 +9,10 @@
     <artifactId>jenkins-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>war</packaging> <!-- ✅ IMPORTANT CHANGE -->
+
     <name>Jenkins Maven Demo</name>
 
-    <!-- ✅ ADD THIS -->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -19,10 +20,21 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- ✅ Servlet API for Tomcat -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        <finalName>jenkins-demo</finalName> <!-- ✅ WAR name -->
+
         <plugins>
+            <!-- Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -31,6 +43,13 @@
                     <source>11</source>
                     <target>11</target>
                 </configuration>
+            </plugin>
+
+            <!-- ✅ WAR plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
             </plugin>
         </plugins>
     </build>
