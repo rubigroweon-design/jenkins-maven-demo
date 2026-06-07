@@ -5,6 +5,6 @@ import org.junit.Test;
 public class AppTest {
     @Test
     public void testApp() {
-        System.out.println("Test passed!");
+        System.out.println("Poll SCM Practise");
     }
 }
